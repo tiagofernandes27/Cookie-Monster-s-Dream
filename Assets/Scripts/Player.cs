@@ -5,16 +5,23 @@ public class Player : MonoBehaviour
 {
 
 
+    public static Player Instance { get; private set; }
+
+
     [SerializeField] private float speed = 5f;
 
 
     private Rigidbody2D playerRigidbody2D;
-    private bool isRunning;
+
     private Vector2 moveDirection;
+    private bool isRunning;
+    private bool isFacingRight = false;
 
 
     private void Awake()
     {
+        Instance = this;
+
         playerRigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -35,21 +42,23 @@ public class Player : MonoBehaviour
 
     private void ProcessInputs()
     {
-        moveDirection = Vector2.zero;
-
-        if (Keyboard.current.wKey.isPressed) moveDirection.y += 1;
-        if (Keyboard.current.sKey.isPressed) moveDirection.y -= 1;
-        if (Keyboard.current.dKey.isPressed) moveDirection.x += 1;
-        if (Keyboard.current.aKey.isPressed) moveDirection.x -= 1;
-
-        moveDirection = moveDirection.normalized;
+        moveDirection = GameInput.Instance.GetMovementVectorNormalized();
 
         isRunning = moveDirection != Vector2.zero;
+
+        // Update facing direction
+        if (moveDirection.x > 0 & !isFacingRight) isFacingRight = true;
+        else if (moveDirection.x < 0 & isFacingRight) isFacingRight = false;
     }
 
     public bool IsRunning()
     {
         return isRunning;
+    }
+
+    public bool IsFacingRight()
+    {
+        return isFacingRight;
     }
 
 
