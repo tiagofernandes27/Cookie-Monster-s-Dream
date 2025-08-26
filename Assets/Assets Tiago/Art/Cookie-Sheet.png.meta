@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: 185c9d442386587499efada4c4f99020
+guid: 703d27bba9701a544b3c6ea8b489ff55
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -9133768675015669609
-    second: FistSpriteSheet 1_0
+      213: 791225601885034919
+    second: Cookie-Sheet_0
   - first:
-      213: 345607501630311877
-    second: FistSpriteSheet 1_1
+      213: -3163437243822993070
+    second: Cookie-Sheet_1
   - first:
-      213: 1187661483464847720
-    second: FistSpriteSheet 1_2
+      213: -7389899525474648101
+    second: Cookie-Sheet_2
   - first:
-      213: 7157802374325494671
-    second: FistSpriteSheet 1_3
+      213: 704096290560473032
+    second: Cookie-Sheet_3
   - first:
-      213: 6683208161750453242
-    second: FistSpriteSheet 1_4
+      213: -6343489063269614842
+    second: Cookie-Sheet_4
+  - first:
+      213: -6431915733659119734
+    second: Cookie-Sheet_5
+  - first:
+      213: -2834288214331206328
+    second: Cookie-Sheet_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,7 +131,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FistSpriteSheet 1_0
+      name: Cookie-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -140,14 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 798c91968c55e3180800000000000000
-      internalID: -9133768675015669609
+      spriteID: 7a95d892e7ffafa00800000000000000
+      internalID: 791225601885034919
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FistSpriteSheet 1_1
+      name: Cookie-Sheet_1
       rect:
         serializedVersion: 2
         x: 16
@@ -162,14 +168,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5cd826e0138dbc400800000000000000
-      internalID: 345607501630311877
+      spriteID: 25190bc56963914d0800000000000000
+      internalID: -3163437243822993070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FistSpriteSheet 1_2
+      name: Cookie-Sheet_2
       rect:
         serializedVersion: 2
         x: 32
@@ -184,14 +190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 861f553a3db6b7010800000000000000
-      internalID: 1187661483464847720
+      spriteID: bdf7142f88dc17990800000000000000
+      internalID: -7389899525474648101
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FistSpriteSheet 1_3
+      name: Cookie-Sheet_3
       rect:
         serializedVersion: 2
         x: 48
@@ -206,14 +212,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f836e16f55f955360800000000000000
-      internalID: 7157802374325494671
+      spriteID: 8c7f68688d375c900800000000000000
+      internalID: 704096290560473032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FistSpriteSheet 1_4
+      name: Cookie-Sheet_4
       rect:
         serializedVersion: 2
         x: 64
@@ -228,8 +234,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: afb8029f9668fbc50800000000000000
-      internalID: 6683208161750453242
+      spriteID: 60b3d336e4667f7a0800000000000000
+      internalID: -6343489063269614842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cookie-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8f800ec7be3db6a0800000000000000
+      internalID: -6431915733659119734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cookie-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84556b1c2e59aa8d0800000000000000
+      internalID: -2834288214331206328
       vertices: []
       indices: 
       edges: []
@@ -238,7 +288,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 247b5bbd92a2f8546a0023b67bbd62ce
+    spriteID: 76a8f599bb9cff54aba8ff0a6a923b7e
     internalID: 0
     vertices: []
     indices: 
@@ -250,11 +300,13 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      FistSpriteSheet 1_0: -9133768675015669609
-      FistSpriteSheet 1_1: 345607501630311877
-      FistSpriteSheet 1_2: 1187661483464847720
-      FistSpriteSheet 1_3: 7157802374325494671
-      FistSpriteSheet 1_4: 6683208161750453242
+      Cookie-Sheet_0: 791225601885034919
+      Cookie-Sheet_1: -3163437243822993070
+      Cookie-Sheet_2: -7389899525474648101
+      Cookie-Sheet_3: 704096290560473032
+      Cookie-Sheet_4: -6343489063269614842
+      Cookie-Sheet_5: -6431915733659119734
+      Cookie-Sheet_6: -2834288214331206328
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
