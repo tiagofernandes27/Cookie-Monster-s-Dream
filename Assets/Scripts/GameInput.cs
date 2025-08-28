@@ -1,12 +1,15 @@
+using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.InputSystem;
 
 public class GameInput : MonoBehaviour
 {
 
 
     public static GameInput Instance { get; private set; }
+
+
+    public event EventHandler OnInteractAction;
+    public event EventHandler OnDashAction;
 
 
     private PlayerInputActions playerInputActions;
@@ -18,6 +21,19 @@ public class GameInput : MonoBehaviour
 
         playerInputActions = new PlayerInputActions();
         playerInputActions.Player.Enable();
+
+        playerInputActions.Player.Interact.performed += Interact_performed;
+        playerInputActions.Player.Dash.performed += Dash_performed;
+    }
+
+    private void Dash_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnDashAction?.Invoke(this, EventArgs.Empty);
+    }
+
+    private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        OnInteractAction?.Invoke(this, EventArgs.Empty);
     }
 
     public Vector2 GetMovementVectorNormalized()

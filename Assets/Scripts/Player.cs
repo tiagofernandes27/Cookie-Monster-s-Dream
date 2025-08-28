@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
@@ -8,12 +7,24 @@ public class Player : MonoBehaviour
     public static Player Instance { get; private set; }
 
 
-    [SerializeField] private float speed = 5f;
+    [Header("Movement")]
+    [SerializeField] private float movementSpeed = 5f;
+    private Vector2 movementDirection;
 
+    [Header("Dash")]
+    [SerializeField] private float dashSpeed = 10f;
+    [SerializeField] private float dashDuration = 0.2f;
+    [SerializeField] private float dashCooldown = 0.5f;
+    [SerializeField] private bool useCooldown = true;
+    private Vector2 dashDirection;
+    private bool isDashing;
+    private bool canDash;
+    private float dashTimer;
+    private float cooldownTimer;
 
+    [Header("References")]
     private Rigidbody2D playerRigidbody2D;
 
-    private Vector2 moveDirection;
     private bool isRunning;
     private bool isFacingRight = false;
 
@@ -23,32 +34,89 @@ public class Player : MonoBehaviour
         Instance = this;
 
         playerRigidbody2D = GetComponent<Rigidbody2D>();
+
+        canDash = true;
     }
 
     private void Start()
     {
-        
+        GameInput.Instance.OnDashAction += GameInput_OnDashAction;
+    }
+
+    private void GameInput_OnDashAction(object sender, System.EventArgs e)
+    {
+        if (canDash)
+        {
+            isDashing = true;
+            canDash = false;
+
+            dashDirection = movementDirection;
+
+            if (dashDirection == Vector2.zero)
+            {
+                dashDirection = dashDirection = isFacingRight ? Vector2.right : Vector2.left;
+            }
+
+            dashTimer = dashDuration;
+        }
     }
 
     private void FixedUpdate()
     {
-        playerRigidbody2D.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * speed;
+        if (isDashing)
+        {
+            playerRigidbody2D.linearVelocity = dashDirection.normalized * dashSpeed;
+            return;
+        }
+
+        playerRigidbody2D.linearVelocity = movementDirection * movementSpeed;
     }
 
     private void Update()
     {
         ProcessInputs();
+        HandleDash();
     }
 
     private void ProcessInputs()
     {
-        moveDirection = GameInput.Instance.GetMovementVectorNormalized();
+        movementDirection = GameInput.Instance.GetMovementVectorNormalized();
 
-        isRunning = moveDirection != Vector2.zero;
+        isRunning = movementDirection != Vector2.zero;
 
         // Update facing direction
-        if (moveDirection.x > 0 & !isFacingRight) isFacingRight = true;
-        else if (moveDirection.x < 0 & isFacingRight) isFacingRight = false;
+        if (movementDirection.x > 0 & !isFacingRight) isFacingRight = true;
+        else if (movementDirection.x < 0 & isFacingRight) isFacingRight = false;
+    }
+
+    private void HandleDash()
+    {
+        if (isDashing)
+        {
+            dashTimer -= Time.deltaTime;
+            if (dashTimer <= 0f)
+            {
+                isDashing = false;
+
+                if (useCooldown)
+                {
+                    cooldownTimer = dashCooldown;
+                }
+                else
+                {
+                    canDash = true;
+                }
+            }
+        }
+
+        if (!canDash && !isDashing && useCooldown)
+        {
+            cooldownTimer -= Time.deltaTime;
+            if (cooldownTimer <= 0f)
+            {
+                canDash = true;
+            }
+        }
     }
 
     public bool IsRunning()
@@ -59,6 +127,11 @@ public class Player : MonoBehaviour
     public bool IsFacingRight()
     {
         return isFacingRight;
+    }
+
+    public bool IsDashing()
+    {
+        return isDashing;
     }
 
 
