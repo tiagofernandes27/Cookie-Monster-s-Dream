@@ -4,14 +4,14 @@ using UnityEngine.InputSystem;
 public class PlayerTest : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
-
-
     private Rigidbody2D playerRigidbody2D;
     private Vector2 moveDirection;
+    public static PlayerTest Instance;
 
 
     private void Awake()
     {
+        Instance = this;
         playerRigidbody2D = GetComponent<Rigidbody2D>();
     }
 

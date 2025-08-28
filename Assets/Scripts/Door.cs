@@ -1,18 +1,18 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static Room;
 
 public class Door : MonoBehaviour
 {
 
-    [SerializeField] private bool playerDetected;
+    [SerializeField] private RoomDifficulty difficulty;
     private PlayerTest player;
     private BoxCollider2D doorCollider;
     private Vector2 originalColliderSize;
 
     private void Awake()
     {
-        playerDetected = false;
         doorCollider = GetComponent<BoxCollider2D>();
         originalColliderSize = doorCollider.size;
     }
@@ -24,10 +24,6 @@ public class Door : MonoBehaviour
         {
             OpenDoor();
             Debug.Log("DOOR OPEN");
-        } 
-        if (playerDetected)
-        { 
-            playerDetected = false;
         }
     }
 
@@ -42,9 +38,9 @@ public class Door : MonoBehaviour
 
         if (collision.TryGetComponent(out PlayerTest player))
         {
-            playerDetected = true;
             this.player = player;
-            Debug.Log("PLAYER ENTERED DOOR");
+            Debug.Log("PLAYER GOES TO "+difficulty+" ROOM");
+            RoomManager.Instance.TransitionToRoom(difficulty);
         }
     }
 
@@ -53,7 +49,6 @@ public class Door : MonoBehaviour
 
         if (collision.TryGetComponent(out PlayerTest player))
         {
-            playerDetected = false;
             Debug.Log("PLAYER LEFT DOOR");
         }
     }
