@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class Room : MonoBehaviour
 {
@@ -6,6 +7,7 @@ public class Room : MonoBehaviour
     private GameObject currentGrid;
     [SerializeField] private Transform roomGridAnchor;
     [SerializeField] private Transform playerSpawnPoint;
+    [SerializeField] private Transform[] enemySpawnPoints;
     public enum RoomDifficulty
     {
         Easy,
@@ -23,5 +25,9 @@ public class Room : MonoBehaviour
 
     public Transform GetPlayerSpawnPosition() { 
         return playerSpawnPoint; 
+    }
+
+    public Transform[] GetEnemySpawnPosition() {
+        return enemySpawnPoints;
     }
 }

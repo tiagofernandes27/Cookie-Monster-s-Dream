@@ -67,7 +67,10 @@ public class RoomManager : MonoBehaviour
         GameObject gridPrefab = GetRandomRoomGrid(difficulty);
         room.SetRoomGrid(gridPrefab);
         // Move player
-        Vector3 playerPosition = room.GetPlayerSpawnPosition().position;
-        PlayerTest.Instance.transform.position = playerPosition;   
+        PlayerTest.Instance.transform.position = room.GetPlayerSpawnPosition().position;
+        if (difficulty == RoomDifficulty.Easy)  // change values according to difficulty
+            EnemyManager.Instance.StartLevel(1, 10, 5, room.GetEnemySpawnPosition());
+        else 
+            EnemyManager.Instance.StartLevel(1, 1, 1, room.GetEnemySpawnPosition());
     }
 }
