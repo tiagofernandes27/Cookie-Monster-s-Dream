@@ -26,7 +26,7 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetBool(IS_RUNNING, Player.Instance.IsRunning());
 
         // Flip sprite based on facing direction
-        spriteRenderer.flipX = Player.Instance.IsFacingRight();
+        spriteRenderer.flipX = !Player.Instance.IsFacingRight();
 
         // Enable/disable trail only when state changes
         bool shouldEmit = Player.Instance.IsDashing();

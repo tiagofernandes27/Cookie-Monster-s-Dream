@@ -26,6 +26,14 @@ public class GameInput : MonoBehaviour
         playerInputActions.Player.Dash.performed += Dash_performed;
     }
 
+    private void OnDestroy()
+    {
+        playerInputActions.Player.Interact.performed -= Interact_performed;
+        playerInputActions.Player.Dash.performed -= Dash_performed;
+
+        playerInputActions.Dispose();
+    }
+
     private void Dash_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
         OnDashAction?.Invoke(this, EventArgs.Empty);
