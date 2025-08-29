@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using static Room;
 
@@ -9,6 +10,8 @@ public class RoomManager : MonoBehaviour
 
     // prefab used to generate rooms
     [SerializeField] private GameObject roomPrefab;
+
+    [SerializeField] private Animator roomTransitionAnimator;
 
     // actual room instance
     private GameObject currentRoom;
@@ -35,11 +38,11 @@ public class RoomManager : MonoBehaviour
 
     private IEnumerator DoTransition(RoomDifficulty difficulty)
     {
-        yield return new WaitForSeconds(0.25f);
+        roomTransitionAnimator.SetTrigger("End");
+        yield return new WaitForSeconds(1);
 
         spawnRoom(difficulty);
-
-        yield return new WaitForSeconds(0.25f);
+        roomTransitionAnimator.SetTrigger("Start");
     }
 
 
