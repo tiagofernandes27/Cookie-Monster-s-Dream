@@ -3,12 +3,21 @@ using UnityEngine;
 public abstract class Weapon : MonoBehaviour
 {
 
+
+    private const string ATTACK = "Attack";
+    private const string ATTACK_SPEED = "AttackSpeed";
+
+
     [Header("Position")]
     [SerializeField] private float radius = 1f;
 
     [Header("Stats")]
     [SerializeField] protected float damage = 10f;
     [SerializeField] protected float attackSpeed = 1f; // attacks per second
+
+    [Header("References")]
+    [SerializeField] private Animator animator;
+    [SerializeField] private SpriteRenderer visualSpriteRenderer;
 
 
     protected float attackCooldown = 0f;
@@ -47,6 +56,9 @@ public abstract class Weapon : MonoBehaviour
 
         // Make weapon face the mouse
         transform.right = dir;
+
+        // Flip visual based on mouse side
+        visualSpriteRenderer.flipY = dir.x < 0;
     }
 
     private bool CanAttack()
@@ -60,7 +72,18 @@ public abstract class Weapon : MonoBehaviour
     {
         if (!CanAttack()) return;
 
+        Debug.Log("Attack!");
+
+        if (attackSpeed <= 0f)
+            attackSpeed = 0.01f;
+
         attackCooldown = Mathf.Max(0.01f, 1f / attackSpeed);
+
+        // Scale the attack animation relative to base attack speed
+        float normalizedSpeed = Mathf.Max(1f, attackSpeed / 2f);
+        animator.SetFloat(ATTACK_SPEED, normalizedSpeed);
+
+        animator.SetTrigger(ATTACK);
 
         PerformAttack();
     }

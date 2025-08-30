@@ -12,14 +12,6 @@ public class FistsOfHungerWeapon : Weapon
     [SerializeField] private LayerMask enemyLayer;
 
 
-    private Animator animator;
-
-
-    private void Awake()
-    {
-        animator = GetComponent<Animator>();
-    }
-
     protected override void Update()
     {
         base.Update();
@@ -33,8 +25,6 @@ public class FistsOfHungerWeapon : Weapon
 
     protected override void PerformAttack()
     {
-        Debug.Log("Attack!");
-
         Vector2 playerPos = Player.Instance.transform.position;
         Vector2 weaponPos = transform.position;
         Vector2 dir = (weaponPos - playerPos).normalized; // from player to weapon
