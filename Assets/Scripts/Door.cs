@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static Room;
+using static RoomManager;
 
 public class Door : MonoBehaviour
 {
