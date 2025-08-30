@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RoomManager : MonoBehaviour
 {
 
-    public enum RoomDifficulty
+    public enum RoomType
     {
         Easy,
-        Hard
+        Hard,
+        Start
     }
 
     public static RoomManager Instance;
@@ -20,63 +20,103 @@ public class RoomManager : MonoBehaviour
     // actual room instance
     private GameObject currentRoom;
     //private PlayerTest player;
-    [SerializeField] private List<GameObject> easyRoomsLayouts;
-    [SerializeField] private List<GameObject> hardRoomsLayouts;
+    [SerializeField] private List<GameObject> easyRoomPrefabs;
+    [SerializeField] private List<GameObject> hardRoomPrefabs;
+    [SerializeField] private GameObject startRoomPrefab;
+    [SerializeField] private GameObject bossRoomPrefab;
     private int riskMeter;
 
-    [SerializeField] private Image riskFillImage; 
+    [SerializeField] private Image riskFillImage;
+
+    private int roomsCounter;
 
     private void Awake()
     {
         Instance = this;
-        riskMeter = 0;
     }
 
     private void Start()
     {
-        // first room is easy
-        SpawnRoom(RoomDifficulty.Easy, true);
+        TransitionToRoom(RoomType.Start);
     }
 
-    public void TransitionToRoom(RoomDifficulty difficulty)
+    public void TransitionToRoom(RoomType difficulty)
     {
         //Debug.Log("GENERATING NEW ROOM");
-        StartCoroutine(DoTransition(difficulty));
+        StartCoroutine(DoTransitionRoom(difficulty));
     }
 
-    private IEnumerator DoTransition(RoomDifficulty difficulty)
+    private IEnumerator DoTransitionRoom(RoomType roomType)
     {
         roomTransitionAnimator.SetTrigger("End");
         yield return new WaitForSeconds(1);
 
-        SpawnRoom(difficulty, false);
+        if (roomType == RoomType.Start)
+            SpawnStartRoom();
+        else if (roomsCounter >= 5)
+            SpawnBossRoom();    
+        else
+            SpawnRoom(roomType);
+
         roomTransitionAnimator.SetTrigger("Start");
     }
 
 
-    private GameObject GetRandomRoomGrid(RoomDifficulty difficulty)
+    private GameObject GetRandomRoomGrid(RoomType difficulty)
     {
         switch (difficulty)
         {
-            case RoomDifficulty.Easy:
-                return easyRoomsLayouts[Random.Range(0, easyRoomsLayouts.Count)];
-            case RoomDifficulty.Hard:
-                return hardRoomsLayouts[Random.Range(0, hardRoomsLayouts.Count)];
+            case RoomType.Easy:
+                return easyRoomPrefabs[Random.Range(0, easyRoomPrefabs.Count)];
+            case RoomType.Hard:
+                return hardRoomPrefabs[Random.Range(0, hardRoomPrefabs.Count)];
             default:
                 return null;
         }
     }
 
-    private void SpawnRoom(RoomDifficulty difficulty, bool firstRoom) {
+    private void SpawnBossRoom()
+    {
+        if (currentRoom != null) Destroy(currentRoom);
+
+        currentRoom = Instantiate(bossRoomPrefab, Vector3.zero, Quaternion.identity);
+        Transform playerPos = currentRoom.transform.Find("PlayerSpawnPoint");
+        PlayerTest.Instance.transform.position = playerPos.position;
+
+        if (playerPos == null)
+        {
+            Debug.LogError("Player position NULL!");
+        }
+    }
+
+    public void SpawnStartRoom()
+    {
+        // reset risk meter and rooms completed counter (game resets)
+        riskMeter = 0;
+        roomsCounter = 0;
+
+        if (currentRoom != null) Destroy(currentRoom);
+
+        currentRoom = Instantiate(startRoomPrefab, Vector3.zero, Quaternion.identity);
+        Transform playerPos = currentRoom.transform.Find("PlayerSpawnPoint");
+        PlayerTest.Instance.transform.position = playerPos.position;
+
+        if (playerPos == null)
+        {
+            Debug.LogError("Player position NULL!");
+        }
+    }
+
+    private void SpawnRoom(RoomType difficulty) {
 
         if (currentRoom != null) Destroy(currentRoom);
 
         // calculate probability of easy room going to hard according to risk meter (first room is easy but does not increase risk)
 
-        if (difficulty == RoomDifficulty.Easy && !firstRoom)
+        if (difficulty == RoomType.Easy)
         {
             if (riskMeter == 100) {
-                difficulty = RoomDifficulty.Hard;
+                difficulty = RoomType.Hard;
                 riskMeter = 0;
             } 
             else {
@@ -84,7 +124,7 @@ public class RoomManager : MonoBehaviour
                 if (roll < riskMeter)
                 {
                     Debug.Log("Risk triggered! Easy room turned into HARD!");
-                    difficulty = RoomDifficulty.Hard;
+                    difficulty = RoomType.Hard;
                     riskMeter = 0; // reset risk meter
                     UpdateRiskMeterUI();
                 }
@@ -98,10 +138,9 @@ public class RoomManager : MonoBehaviour
 
         currentRoom = Instantiate(GetRandomRoomGrid(difficulty), Vector3.zero, Quaternion.identity);
         Transform playerPos = currentRoom.transform.Find("PlayerSpawnPoint");
-        Transform[] spawnPoints = new Transform[3];
-        spawnPoints[0] = currentRoom.transform.Find("EnemySpawnPoint");
+        Transform[] spawnPoints = new Transform[2];
+        spawnPoints[0] = currentRoom.transform.Find("EnemySpawnPoint1");
         spawnPoints[1] = currentRoom.transform.Find("EnemySpawnPoint2");
-        spawnPoints[2] = currentRoom.transform.Find("EnemySpawnPoint3");
 
         if (playerPos == null)
         {
@@ -117,11 +156,13 @@ public class RoomManager : MonoBehaviour
         }
 
         PlayerTest.Instance.transform.position = playerPos.position;
-        if (difficulty == RoomDifficulty.Easy) 
-            EnemyManager.Instance.StartLevel(1, 10, 5, spawnPoints);    // change values according to difficulty
+        if (difficulty == RoomType.Easy) 
+            EnemyManager.Instance.StartWaves(1, 10, 5, spawnPoints);    // change values according to difficulty
         else 
-            EnemyManager.Instance.StartLevel(1, 10, 5, spawnPoints);
+            EnemyManager.Instance.StartWaves(1, 10, 5, spawnPoints);
 
+        roomsCounter++;
+        Debug.Log("Rooms Counter: "+roomsCounter);
         Debug.Log($"Risk Meter: {riskMeter}%");
     }
 

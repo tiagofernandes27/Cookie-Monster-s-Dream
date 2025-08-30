@@ -5,6 +5,7 @@ public class EnemyManager : MonoBehaviour
 {
 
     [SerializeField] private List<Enemy> enemies = new List<Enemy>();
+    [SerializeField] private Enemy boss;
     private int currWave;
     private int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
@@ -16,7 +17,6 @@ public class EnemyManager : MonoBehaviour
     private float spawnTimer;
     private int waveLimit;
     private int waveMultiplier;
-    private int spawnIndex;
     public static EnemyManager Instance;
 
     public List<GameObject> spawnedEnemies = new List<GameObject>();
@@ -60,7 +60,11 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public void StartLevel(int waveLimit, int waveDuration, int waveMultiplier, Transform[] spawnLocations)
+    public void SpawnBoss(Transform spawnLocation) {
+        Instantiate(boss.enemyPrefab, spawnLocation.position, Quaternion.identity);
+    }
+
+    public void StartWaves(int waveLimit, int waveDuration, int waveMultiplier, Transform[] spawnLocations)
     {
         this.waveLimit = waveLimit;
         this.waveMultiplier = waveMultiplier;
@@ -68,6 +72,12 @@ public class EnemyManager : MonoBehaviour
         this.spawnLocations = spawnLocations;
         this.currWave = 1;
         this.GenerateWave();
+    }
+
+    public void StopWaves() {
+        this.currWave = 0;  // reset current wave value so it does not generate enemies in the fixedUpdate method
+        foreach (GameObject spawnedEnemy in spawnedEnemies) 
+            Destroy(spawnedEnemy);  // eliminate existing enemies from the scene
     }
 
     public void GenerateWave()

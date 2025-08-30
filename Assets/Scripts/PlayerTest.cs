@@ -23,6 +23,7 @@ public class PlayerTest : MonoBehaviour
     private void Update()
     {
         ProcessInputs();
+        PlayerDieTest();
     }
 
     private void ProcessInputs()
@@ -35,5 +36,14 @@ public class PlayerTest : MonoBehaviour
         if (Keyboard.current.aKey.isPressed) moveDirection.x -= 1;
 
         moveDirection = moveDirection.normalized;
+    }
+
+    private void PlayerDieTest() {
+        if (Keyboard.current.yKey.isPressed) {
+            Debug.Log("PLAYER DIED!");
+            EnemyManager.Instance.StopWaves();
+            RoomManager.Instance.TransitionToRoom(RoomManager.RoomType.Start);
+        }
+        
     }
 }

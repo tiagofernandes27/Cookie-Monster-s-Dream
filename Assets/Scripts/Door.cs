@@ -6,7 +6,7 @@ using static RoomManager;
 public class Door : MonoBehaviour
 {
 
-    [SerializeField] private RoomDifficulty difficulty;
+    [SerializeField] private RoomType difficulty;
     private PlayerTest player;
     private BoxCollider2D doorCollider;
     private Vector2 originalColliderSize;

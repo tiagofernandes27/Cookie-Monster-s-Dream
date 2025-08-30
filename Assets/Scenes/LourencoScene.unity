@@ -263,6 +263,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1625141897}
+  - {fileID: 813750055}
   - {fileID: 1892821021}
   m_Father: {fileID: 2018386985}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -580,17 +581,17 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 813750054}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1892821021}
+  m_Father: {fileID: 369363300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 0}
-  m_SizeDelta: {x: 400, y: 100}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -700, y: 549.6577}
+  m_SizeDelta: {x: -1542.934, y: -1201.511}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &813750056
 MonoBehaviour:
@@ -693,6 +694,9 @@ MonoBehaviour:
   enemies:
   - enemyPrefab: {fileID: 7740054088925803948, guid: 152497d00bc1e4a469f6209c28a13259, type: 3}
     cost: 1
+  boss:
+    enemyPrefab: {fileID: 0}
+    cost: 0
   enemiesToSpawn: []
   spawnedEnemies: []
 --- !u!4 &1586664889
@@ -887,7 +891,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 10
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -928,8 +932,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 813750055}
+  m_Children: []
   m_Father: {fileID: 369363300}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -957,7 +960,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 4883361942472830884, guid: 35c91e02a4ca55c4a896fb388396336a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1005,14 +1008,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomManager
   roomTransitionAnimator: {fileID: 1625141900}
-  easyRoomsLayouts:
-  - {fileID: 3719482707824862471, guid: 8d7082c56cc9fb74e930322f0c0b26a1, type: 3}
-  - {fileID: 3719482707824862471, guid: 26c6fb22c4e04ae428044cfedcc83a8a, type: 3}
-  - {fileID: 3719482707824862471, guid: a0477ad209110df42b0a6d10b681ae73, type: 3}
-  hardRoomsLayouts:
-  - {fileID: 3719482707824862471, guid: c3a260f3ada3d7c4397a81a3bd06437d, type: 3}
-  - {fileID: 3719482707824862471, guid: c57684b8295a2684ab192dd5242949c3, type: 3}
-  - {fileID: 3719482707824862471, guid: 6f3ccd928fc8a5e459cf8bfcab08fe79, type: 3}
+  easyRoomPrefabs:
+  - {fileID: 2902412846678351419, guid: e31fcfe7cab17cc4cb1f3e2d789b3cc9, type: 3}
+  - {fileID: 2902412846678351419, guid: ee58cfd536a1165418029ce8da96af4d, type: 3}
+  - {fileID: 2902412846678351419, guid: cb5b392b36fd189469c17bd49ae483c8, type: 3}
+  hardRoomPrefabs:
+  - {fileID: 2902412846678351419, guid: cf0d364ea8869c04c89892bd177609a5, type: 3}
+  - {fileID: 2902412846678351419, guid: 4200858ba590ad64fb87d831876afd4f, type: 3}
+  - {fileID: 2902412846678351419, guid: 0204f092209e297478ce4e2253cc2e96, type: 3}
+  startRoomPrefab: {fileID: 2902412846678351419, guid: 1e03e011740ab874eae88889f20fc291, type: 3}
+  bossRoomPrefab: {fileID: 2902412846678351419, guid: 25499ca3f46869648a344cde860b2ded, type: 3}
   riskFillImage: {fileID: 813750056}
 --- !u!4 &1963944417
 Transform:
