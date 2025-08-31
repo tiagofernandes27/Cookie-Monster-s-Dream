@@ -6,6 +6,9 @@ public class WeaponHolder : MonoBehaviour
 {
 
 
+    public static WeaponHolder Instance { get; private set; }
+
+
     [System.Serializable]
     private class WeaponEntry
     {
@@ -21,12 +24,19 @@ public class WeaponHolder : MonoBehaviour
     [SerializeField] private List<WeaponEntry> meleeWeapons = new List<WeaponEntry>();
     [SerializeField] private List<WeaponEntry> rangedWeapons = new List<WeaponEntry>();
 
+
     private int currentMeleeIndex = 0;
     private int currentRangedIndex = 0;
 
     private Weapon activeMelee;
     private Weapon activeRanged;
     private Weapon activeVisual; // Only 1 is visible at a time
+
+
+    private void Awake()
+    {
+        Instance = this;
+    }
 
     private void Start()
     {

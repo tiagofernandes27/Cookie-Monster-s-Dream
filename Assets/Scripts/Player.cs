@@ -1,4 +1,5 @@
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class Player : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class Player : MonoBehaviour
 
     private bool isRunning;
     private bool isFacingRight = false;
+
+    private int playerMoney;
 
 
     private void Awake()
@@ -132,6 +135,12 @@ public class Player : MonoBehaviour
     public bool IsDashing()
     {
         return isDashing;
+    }
+
+    public int PlayerMoney
+    {
+        get { return playerMoney; }   // like a "get function"
+        set { }
     }
 
 

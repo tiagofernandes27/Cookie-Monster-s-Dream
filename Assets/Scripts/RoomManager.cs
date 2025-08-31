@@ -82,7 +82,9 @@ public class RoomManager : MonoBehaviour
 
         currentRoom = Instantiate(bossRoomPrefab, Vector3.zero, Quaternion.identity);
         Transform playerPos = currentRoom.transform.Find("PlayerSpawnPoint");
-        PlayerTest.Instance.transform.position = playerPos.position;
+        Player.Instance.transform.position = playerPos.position;
+        Transform bossSpawn = currentRoom.transform.Find("BossSpawnPoint");
+        EnemyManager.Instance.SpawnBoss(bossSpawn);
 
         if (playerPos == null)
         {
@@ -101,7 +103,8 @@ public class RoomManager : MonoBehaviour
 
         currentRoom = Instantiate(startRoomPrefab, Vector3.zero, Quaternion.identity);
         Transform playerPos = currentRoom.transform.Find("PlayerSpawnPoint");
-        PlayerTest.Instance.transform.position = playerPos.position;
+        Player.Instance.transform.position = playerPos.position;
+        OpenRoomDoors();
 
         if (playerPos == null)
         {
@@ -157,7 +160,7 @@ public class RoomManager : MonoBehaviour
             }
         }
 
-        PlayerTest.Instance.transform.position = playerPos.position;
+        Player.Instance.transform.position = playerPos.position;
         if (difficulty == RoomType.Easy) 
             EnemyManager.Instance.StartWaves(1, 10, 5, spawnPoints);    // change values according to difficulty
         else 
@@ -168,8 +171,8 @@ public class RoomManager : MonoBehaviour
         Debug.Log($"Risk Meter: {riskMeter}%");
 
         if (roomsCounter > 1) { // player passed a room
-            PlayerTest.Instance.playerMoney += 5;
-            Debug.Log("Player Money " + PlayerTest.Instance.playerMoney);
+            Player.Instance.PlayerMoney += 5;
+            Debug.Log("Player Money " + Player.Instance.PlayerMoney);
         }
     }
 

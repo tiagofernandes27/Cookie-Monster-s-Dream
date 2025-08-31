@@ -115,7 +115,7 @@ MonoBehaviour:
   enemyType: 0
   damage: 1
   speed: 2
-  health: 5
+  health: 12
   weapon: {fileID: 4029444270738807623}
   attackCooldown: 2
   projectilePrefab: {fileID: 0}
@@ -204,7 +204,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -3
+  m_SortingOrder: 11
   m_Sprite: {fileID: -705386350774159292, guid: 5c18e3dba10465b469f84c0058ffe19a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

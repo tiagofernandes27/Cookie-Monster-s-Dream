@@ -1,8 +1,15 @@
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Playables;
 using UnityEngine;
 using UnityEngine.UI;
+
+public enum AbilityType
+{
+    Weapon,
+    Health,
+    AttackSpeed,
+    Damage,
+}
 
 [System.Serializable]
 public class AbilityEntry
@@ -12,6 +19,13 @@ public class AbilityEntry
     public string abilityName;
     public Animator lockAnimator;
     public GameObject shadow;
+    public Weapon weapon;
+    public AbilityType type;
+    public bool unlocked;
+    // For upgrades
+    public int hpIncrease;
+    public float attackSpeedIncrease;
+    public float damageIncrease;
 }
 
 public class ShopUI : MonoBehaviour
@@ -48,16 +62,50 @@ public class ShopUI : MonoBehaviour
 
     private void BuyAbility(AbilityEntry ability)
     {
-        Debug.Log("Selected Ability" + ability.abilityName);
-        if (PlayerTest.Instance.playerMoney > ability.cost) {
-            Debug.Log($"Bought Ability " + ability.abilityName);
-            PlayerTest.Instance.playerMoney -= ability.cost;
-            if (ability.lockAnimator != null)
-                ability.lockAnimator.SetTrigger("StartLockAnimation");
+        if (ability.unlocked)
+        {
+            Debug.Log($"Ability {ability.abilityName} already unlocked.");
+            return;
         }
-            
-        else
-            Debug.Log("Player does not have enough money");
+
+        if (Player.Instance.PlayerMoney < ability.cost)
+        {
+            Debug.Log("Not enough money.");
+            return;
+        }
+        
+        Debug.Log($"Bought Ability " + ability.abilityName);
+
+        Player.Instance.PlayerMoney -= ability.cost;
+        ability.unlocked = true;
+
+        switch (ability.type)
+        {
+            case AbilityType.Weapon:
+                if (ability.weapon != null)
+                {
+                    if (ability.lockAnimator != null)
+                        ability.lockAnimator.SetTrigger("StartLockAnimation");
+
+                    WeaponHolder.Instance.UnlockWeapon(ability.weapon, true);
+                    Debug.Log($"Unlocked weapon: {ability.abilityName}");
+                }
+                break;
+
+            case AbilityType.Health:
+                if (ability.hpIncrease > 0)
+                    PlayerHealth.Instance.IncrementHealth(ability.hpIncrease);
+                break;
+
+            case AbilityType.AttackSpeed:
+                if (ability.attackSpeedIncrease > 0)
+                    ability.weapon.UpgradeAttackSpeed(ability.attackSpeedIncrease);
+                break;
+            case AbilityType.Damage:
+                if (ability.damageIncrease > 0)
+                    ability.weapon.UpgradeDamage(ability.damageIncrease);
+                break;
+        }
     }
 
     public void HideLock(GameObject lockpref)

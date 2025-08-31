@@ -115,7 +115,7 @@ MonoBehaviour:
   visualSprite: {fileID: 5246250734058237878}
   hitLayers:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 64
 --- !u!1 &7065064016942233375
 GameObject:
   m_ObjectHideFlags: 0
@@ -195,7 +195,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 16
   m_Sprite: {fileID: -7910800581375681518, guid: 3ddff59330659f24ea72d3061497021d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

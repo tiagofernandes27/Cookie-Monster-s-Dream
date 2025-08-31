@@ -4,8 +4,8 @@ using UnityEngine;
 public class EnemyManager : MonoBehaviour
 {
 
-    [SerializeField] private List<Enemy> enemies = new List<Enemy>();
-    [SerializeField] private Enemy boss;
+    [SerializeField] private List<EnemyCost> enemies = new List<EnemyCost>();
+    [SerializeField] private EnemyCost boss;
     private int currWave;
     private int waveValue;
     public List<GameObject> enemiesToSpawn = new List<GameObject>();
@@ -30,6 +30,9 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (currWave >= waveLimit && spawnedEnemies.Count == 0)
+            RoomManager.Instance.OpenRoomDoors();
+
         if (currWave > 0 && currWave <= waveLimit) {
             if (spawnTimer <= 0)
             {
@@ -115,7 +118,7 @@ public class EnemyManager : MonoBehaviour
 }
 
 [System.Serializable]
-public class Enemy
+public class EnemyCost
 {
     public GameObject enemyPrefab;
     public int cost;

@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -3
+  m_SortingOrder: 11
   m_Sprite: {fileID: 4599590231777538514, guid: f33dcb0f1cf1a4949bef203eae1d75e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -241,7 +241,9 @@ MonoBehaviour:
   enemyType: 1
   damage: 1
   speed: 2
-  health: 5
+  health: 8
+  weapon: {fileID: 0}
+  attackCooldown: 1
   projectilePrefab: {fileID: 0}
   firePoint: {fileID: 0}
   shootCooldown: 2

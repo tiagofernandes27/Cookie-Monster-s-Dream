@@ -185,7 +185,7 @@ public class Enemy : MonoBehaviour
         // Damage player if in radius
         if (Vector2.Distance(player.position, transform.position) <= explodeRadius)
         {
-            player.GetComponent<PlayerHealth>()?.ChangeHealth(-explodeDamage);
+            player.GetComponent<PlayerHealth>()?.IncrementHealth(-explodeDamage);
         }
 
         // Optionally add VFX, sound, etc.
@@ -210,6 +210,7 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
+        EnemyManager.Instance.spawnedEnemies.Remove(gameObject);
         Destroy(gameObject);
     }
     #endregion

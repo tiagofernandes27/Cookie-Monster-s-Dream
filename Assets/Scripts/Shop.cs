@@ -12,10 +12,9 @@ public class Shop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerTest player))
+        if (collision.TryGetComponent(out Player player))
         {
             
-            //string[] abilities = { "Unlock Weapon Permanently", "Upgrade Weapons", "Raise HP" };
             shopUI.OpenShop();
 
         }
@@ -23,7 +22,7 @@ public class Shop : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerTest player) && shopUI != null)
+        if (collision.TryGetComponent(out Player player) && shopUI != null)
         {
             shopUI.CloseShop();
         }

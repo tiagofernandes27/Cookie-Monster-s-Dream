@@ -33,7 +33,7 @@ public class RatFist : MonoBehaviour
         Collider2D hit = Physics2D.OverlapCircle(transform.position, attackRange, hitLayers);
         if (hit != null)
         {
-            hit.GetComponent<PlayerHealth>()?.ChangeHealth(-damage);
+            hit.GetComponent<PlayerHealth>()?.IncrementHealth(-damage);
             Debug.Log("Hit" + hit);
         }
 

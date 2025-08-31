@@ -41,7 +41,7 @@ public class EnemyProjectile : MonoBehaviour
         {
             var playerHealth = collision.GetComponent<PlayerHealth>();
             if (playerHealth != null)
-                playerHealth.ChangeHealth(-damage);
+                playerHealth.IncrementHealth(-damage);
 
             Destroy(gameObject);
         }

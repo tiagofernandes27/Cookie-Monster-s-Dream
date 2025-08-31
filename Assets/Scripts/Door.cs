@@ -7,7 +7,6 @@ public class Door : MonoBehaviour
 {
 
     [SerializeField] private RoomType difficulty;
-    private PlayerTest player;
     private BoxCollider2D doorCollider;
     private Vector2 originalColliderSize;
 
@@ -35,19 +34,11 @@ public class Door : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.TryGetComponent(out PlayerTest player))
+        if (collision.TryGetComponent(out Player player))
         {
-            this.player = player;
             RoomManager.Instance.TransitionToRoom(difficulty);
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
 
-        if (collision.TryGetComponent(out PlayerTest player))
-        {
-            ///
-        }
-    }
 }

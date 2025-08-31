@@ -78,7 +78,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 16
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
   m_Color: {r: 0.4716981, g: 0.28702384, b: 0.28702384, a: 1}
   m_FlipX: 0
@@ -218,4 +218,4 @@ MonoBehaviour:
   visualSprite: {fileID: 4168348815612018869}
   hitLayers:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 64

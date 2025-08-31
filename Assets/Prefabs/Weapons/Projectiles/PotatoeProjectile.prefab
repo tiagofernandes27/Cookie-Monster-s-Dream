@@ -115,7 +115,7 @@ MonoBehaviour:
   visualSprite: {fileID: 5296216382946890559}
   hitLayers:
     serializedVersion: 2
-    m_Bits: 119
+    m_Bits: 64
   explosionRadius: 3
   animator: {fileID: 2314035854414776435}
   enemyLayer:
@@ -201,7 +201,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 16
   m_Sprite: {fileID: 6794454370711207110, guid: 52c1bac5478b7744e8ed66efe31271c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
