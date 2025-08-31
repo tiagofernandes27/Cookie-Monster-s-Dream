@@ -1988,42 +1988,55 @@ MonoBehaviour:
   - button: {fileID: 1993850467}
     cost: 10
     abilityName: OvenMitt
+    lockAnimator: {fileID: 1093430966}
   - button: {fileID: 1753197926}
     cost: 15
     abilityName: RollingPin
+    lockAnimator: {fileID: 1712974957}
   - button: {fileID: 849492744}
     cost: 15
     abilityName: RotatingWhisk
+    lockAnimator: {fileID: 140215945}
   - button: {fileID: 9730762}
     cost: 20
     abilityName: Oven
+    lockAnimator: {fileID: 1755057000}
   - button: {fileID: 1453105881}
     cost: 10
     abilityName: AttackSpeedOvenMitt
+    lockAnimator: {fileID: 0}
   - button: {fileID: 1595874765}
     cost: 10
     abilityName: RaiseDamageOvenMitt
+    lockAnimator: {fileID: 0}
   - button: {fileID: 520537958}
     cost: 10
     abilityName: AttackSpeedRollingPin
+    lockAnimator: {fileID: 0}
   - button: {fileID: 1658234363}
     cost: 10
     abilityName: RaiseDamageRollingPin
+    lockAnimator: {fileID: 0}
   - button: {fileID: 1211639379}
     cost: 10
     abilityName: AttackSpeedRotatingWhisk
+    lockAnimator: {fileID: 0}
   - button: {fileID: 991914209}
     cost: 10
     abilityName: RaiseDamageRotatingWhisk
+    lockAnimator: {fileID: 0}
   - button: {fileID: 1446343446}
     cost: 10
     abilityName: AttackSpeedOven
+    lockAnimator: {fileID: 0}
   - button: {fileID: 343393891}
     cost: 10
     abilityName: RaiseDamageOven
+    lockAnimator: {fileID: 0}
   - button: {fileID: 264211810}
     cost: 10
     abilityName: RaiseHP
+    lockAnimator: {fileID: 0}
 --- !u!1 &1173945036
 GameObject:
   m_ObjectHideFlags: 0

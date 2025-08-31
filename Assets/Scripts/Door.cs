@@ -23,8 +23,7 @@ public class Door : MonoBehaviour
         if (Keyboard.current.tKey.IsActuated())
         {
             OpenDoor();
-            Debug.Log("DOOR OPEN");
-        }
+        } 
     }
 
     public void OpenDoor() {
@@ -39,7 +38,6 @@ public class Door : MonoBehaviour
         if (collision.TryGetComponent(out PlayerTest player))
         {
             this.player = player;
-            Debug.Log("PLAYER GOES TO "+difficulty+" ROOM");
             RoomManager.Instance.TransitionToRoom(difficulty);
         }
     }
@@ -49,7 +47,7 @@ public class Door : MonoBehaviour
 
         if (collision.TryGetComponent(out PlayerTest player))
         {
-            Debug.Log("PLAYER LEFT DOOR");
+            ///
         }
     }
 }

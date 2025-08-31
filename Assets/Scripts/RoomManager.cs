@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class RoomManager : MonoBehaviour
@@ -180,4 +181,47 @@ public class RoomManager : MonoBehaviour
         // Convert percentage into fill amount (0–1)
         riskFillImage.fillAmount = riskValue / 100f;
     }
+
+    public void OpenRoomDoors()
+    {
+        if (currentRoom == null)
+        {
+            Debug.LogWarning("No current room to open doors in!");
+            return;
+        }
+        else { 
+        
+        }
+
+        // Try to find EasyDoor and HardDoor under the currentRoom hierarchy
+        Transform easyDoor = currentRoom.transform.Find("EasyDoor");
+        Transform hardDoor = currentRoom.transform.Find("HardDoor");
+
+        if (easyDoor != null)
+        {
+            Door easyDoorScript = easyDoor.GetComponent<Door>();
+            if (easyDoorScript != null)
+                easyDoorScript.OpenDoor();
+            else
+                Debug.LogWarning("EasyDoor exists but has no Door script!");
+        }
+        else
+        {
+            Debug.LogWarning("EasyDoor not found in currentRoom!");
+        }
+
+        if (hardDoor != null)
+        {
+            Door hardDoorScript = hardDoor.GetComponent<Door>();
+            if (hardDoorScript != null)
+                hardDoorScript.OpenDoor();
+            else
+                Debug.LogWarning("HardDoor exists but has no Door script!");
+        }
+        else
+        {
+            Debug.LogWarning("HardDoor not found in currentRoom!");
+        }
+    }
+
 }

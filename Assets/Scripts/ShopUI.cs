@@ -10,6 +10,7 @@ public class AbilityEntry
     public Button button;
     public int cost;
     public string abilityName;
+    public Animator lockAnimator;
 }
 
 public class ShopUI : MonoBehaviour
@@ -47,8 +48,13 @@ public class ShopUI : MonoBehaviour
     private void BuyAbility(AbilityEntry ability)
     {
         Debug.Log("Selected Ability" + ability.abilityName);
-        if (PlayerTest.Instance.playerMoney > ability.cost)
-            Debug.Log($"Bought Ability "+ability.abilityName);
+        if (PlayerTest.Instance.playerMoney > ability.cost) {
+            Debug.Log($"Bought Ability " + ability.abilityName);
+            PlayerTest.Instance.playerMoney -= ability.cost;
+            if (ability.lockAnimator != null)
+                ability.lockAnimator.SetTrigger("StartLockAnimation");
+        }
+            
         else
             Debug.Log("Player does not have enough money");
     }

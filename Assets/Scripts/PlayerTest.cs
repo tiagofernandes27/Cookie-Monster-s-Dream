@@ -42,7 +42,6 @@ public class PlayerTest : MonoBehaviour
 
     private void PlayerDieTest() {
         if (Keyboard.current.yKey.isPressed) {
-            Debug.Log("PLAYER DIED!");
             EnemyManager.Instance.StopWaves();
             RoomManager.Instance.TransitionToRoom(RoomManager.RoomType.Start);
         }
