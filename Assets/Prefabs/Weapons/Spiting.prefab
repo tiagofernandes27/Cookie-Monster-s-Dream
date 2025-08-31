@@ -159,8 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpitingWeapon
   radius: 1.5
-  damage: 10
-  attackSpeed: 3
+  damage: 4
+  attackSpeed: 2
   animator: {fileID: 8568643913779843725}
   visualSpriteRenderer: {fileID: 1081308327652449905}
   flipMode: 2

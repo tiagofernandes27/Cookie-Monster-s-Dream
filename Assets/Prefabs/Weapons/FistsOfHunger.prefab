@@ -160,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FistsOfHungerWeapon
   radius: 1.5
   damage: 10
-  attackSpeed: 0.5
+  attackSpeed: 1
   animator: {fileID: 8319292755748037432}
   visualSpriteRenderer: {fileID: 0}
   flipMode: 2

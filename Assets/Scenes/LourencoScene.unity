@@ -319,6 +319,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67263532}
   m_CullTransparentMesh: 1
+--- !u!114 &82487270 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 37893986185306716, guid: 54bd8c25922dd7b499a2844e6e81e6ee, type: 3}
+  m_PrefabInstance: {fileID: 2006624087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14de7bdf6f8857f44b2829e74dd2dcbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RollingPinWeapon
 --- !u!1 &133219060
 GameObject:
   m_ObjectHideFlags: 0
@@ -1834,6 +1845,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 849492742}
   m_CullTransparentMesh: 1
+--- !u!114 &849987347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6028071350465335615, guid: 54bd8c25922dd7b499a2844e6e81e6ee, type: 3}
+  m_PrefabInstance: {fileID: 2006624087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879ed36cde21f914a80a91feb6537860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OvenMittWeapon
 --- !u!1 &991914207
 GameObject:
   m_ObjectHideFlags: 0
@@ -2136,6 +2158,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080078700}
   m_CullTransparentMesh: 1
+--- !u!114 &1080452199 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7346793883934464371, guid: 54bd8c25922dd7b499a2844e6e81e6ee, type: 3}
+  m_PrefabInstance: {fileID: 2006624087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd955d6fcdc3fe41805e559e5f173fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OvenWeapon
 --- !u!224 &1093430965 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1309716181434965568, guid: 632f94c98a75abe4e931f732caaa2404, type: 3}
@@ -2202,7 +2235,7 @@ MonoBehaviour:
     abilityName: OvenMitt
     lockAnimator: {fileID: 1093430966}
     shadow: {fileID: 67263532}
-    weapon: {fileID: 217338264162625282, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+    weapon: {fileID: 849987347}
     type: 0
     unlocked: 0
     hpIncrease: 0
@@ -2213,7 +2246,7 @@ MonoBehaviour:
     abilityName: RollingPin
     lockAnimator: {fileID: 399823653}
     shadow: {fileID: 1080078700}
-    weapon: {fileID: 2009612713248248597, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+    weapon: {fileID: 82487270}
     type: 0
     unlocked: 0
     hpIncrease: 0
@@ -2224,7 +2257,7 @@ MonoBehaviour:
     abilityName: RotatingWhisk
     lockAnimator: {fileID: 1018418621}
     shadow: {fileID: 1747570394}
-    weapon: {fileID: 6745380428497876915, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+    weapon: {fileID: 1489854942}
     type: 0
     unlocked: 0
     hpIncrease: 0
@@ -2235,7 +2268,7 @@ MonoBehaviour:
     abilityName: Oven
     lockAnimator: {fileID: 1887793892}
     shadow: {fileID: 831140621}
-    weapon: {fileID: 1292480033799338235, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+    weapon: {fileID: 1080452199}
     type: 0
     unlocked: 0
     hpIncrease: 0
@@ -2852,6 +2885,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1453105879}
   m_CullTransparentMesh: 1
+--- !u!114 &1489854942 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4793747229991112576, guid: 54bd8c25922dd7b499a2844e6e81e6ee, type: 3}
+  m_PrefabInstance: {fileID: 2006624087}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a0dcb3de4d3a74fa69c373a9e10257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingWhiskWeapon
 --- !u!1 &1534145865
 GameObject:
   m_ObjectHideFlags: 0
