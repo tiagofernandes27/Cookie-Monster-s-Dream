@@ -51,7 +51,7 @@ public class PotatoeProjectile : Projectile
         {
             //Debug.Log($"Explosion hit: {hit.name}");
             // TODO: Apply damage from Weapon
-            hit.GetComponent<Enemy>().TakeDamage(damage);
+            hit.GetComponent<Enemy>()?.TakeDamage(damage);
         }
 
         if (animator != null)

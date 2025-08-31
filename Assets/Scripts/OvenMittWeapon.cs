@@ -39,7 +39,7 @@ public class OvenMittWeapon : Weapon
         foreach (Collider2D hit in hits)
         {
             // TODO: enemy damage logic
-            hit.GetComponent<Enemy>().TakeDamage(damage);
+            hit.GetComponent<Enemy>()?.TakeDamage(damage);
         }
     }
 

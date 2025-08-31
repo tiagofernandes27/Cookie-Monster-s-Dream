@@ -60,7 +60,7 @@ public class RollingPinWeapon : Weapon
         //Debug.Log($"Rolling Pin hit {other.name} ({enemyHitCounts[other]}/{maxHitsPerEnemy})");
 
         // TODO: Apply damage
-        other.GetComponent<Enemy>().TakeDamage(damage);
+        other.GetComponent<Enemy>()?.TakeDamage(damage);
     }
 
 

@@ -43,7 +43,8 @@ public class Enemy : MonoBehaviour
 
         defaultSpeed = speed;
 
-        weapon.gameObject.SetActive(false);
+        if (weapon != null)
+            weapon.gameObject.SetActive(false);
     }
 
     private void Update()

@@ -1,0 +1,557 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8134188037277900119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1454898047739707863}
+  - component: {fileID: 353858948065729017}
+  m_Layer: 0
+  m_Name: WeaponHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1454898047739707863
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134188037277900119}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2098117858838063663}
+  - {fileID: 5067353664999920865}
+  - {fileID: 5992380568613009795}
+  - {fileID: 2885923685317944206}
+  - {fileID: 6830296848828214126}
+  - {fileID: 7657108817941311574}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &353858948065729017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8134188037277900119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d299c9f9feb74a41ba4db4bfcb98708, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeaponHolder
+  meleeWeapons:
+  - weaponName: Fists Of Hunger
+    weapon: {fileID: 5480794474596935803}
+    storeUnlocked: 1
+    sessionUnlocked: 0
+  - weaponName: Oven Mitt
+    weapon: {fileID: 4076365361704682000}
+    storeUnlocked: 0
+    sessionUnlocked: 0
+  - weaponName: Rolling Pin
+    weapon: {fileID: 7763231759325311347}
+    storeUnlocked: 0
+    sessionUnlocked: 0
+  rangedWeapons:
+  - weaponName: Spiting
+    weapon: {fileID: 3974894342582657107}
+    storeUnlocked: 1
+    sessionUnlocked: 0
+  - weaponName: Oven
+    weapon: {fileID: 1067111608423172700}
+    storeUnlocked: 0
+    sessionUnlocked: 0
+  - weaponName: Rotating Whisk
+    weapon: {fileID: 3007531485038992559}
+    storeUnlocked: 0
+    sessionUnlocked: 0
+--- !u!1001 &2243051981300478631
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1454898047739707863}
+    m_Modifications:
+    - target: {fileID: 2350321338790761082, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_Name
+      value: Oven
+      objectReference: {fileID: 0}
+    - target: {fileID: 2350321338790761082, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+--- !u!114 &1067111608423172700 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1292480033799338235, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+  m_PrefabInstance: {fileID: 2243051981300478631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dd955d6fcdc3fe41805e559e5f173fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OvenWeapon
+--- !u!4 &5992380568613009795 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5479153981769321252, guid: fb7323dd14ce0e1488da527ca4bb83bc, type: 3}
+  m_PrefabInstance: {fileID: 2243051981300478631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4293631720095098130
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1454898047739707863}
+    m_Modifications:
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068773440702824370, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_Name
+      value: OvenMitt
+      objectReference: {fileID: 0}
+    - target: {fileID: 9068773440702824370, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+--- !u!114 &4076365361704682000 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 217338264162625282, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+  m_PrefabInstance: {fileID: 4293631720095098130}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 879ed36cde21f914a80a91feb6537860, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::OvenMittWeapon
+--- !u!4 &6830296848828214126 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7303745159877758588, guid: 2bc82be30e01a3a4dbdd8bdfcfc0bd9b, type: 3}
+  m_PrefabInstance: {fileID: 4293631720095098130}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6580925702454800664
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1454898047739707863}
+    m_Modifications:
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161083039272484812, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_Name
+      value: Spiting
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161083039272484812, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5161083039272484812, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+--- !u!114 &3974894342582657107 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7817558833900228939, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+  m_PrefabInstance: {fileID: 6580925702454800664}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d87090353ea157b489e76830e671cdfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpitingWeapon
+--- !u!4 &5067353664999920865 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2091638629227455993, guid: 35821aac5280aa747b6c25e4c8c7ba80, type: 3}
+  m_PrefabInstance: {fileID: 6580925702454800664}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7695028843035008362
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1454898047739707863}
+    m_Modifications:
+    - target: {fileID: 2793791422795003153, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: visualSpriteRenderer
+      value: 
+      objectReference: {fileID: 8396313463810251800}
+    - target: {fileID: 8414407152434333424, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_Name
+      value: FistsOfHunger
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414407152434333424, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8414407152434333424, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+--- !u!4 &2098117858838063663 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8634588946028738373, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+  m_PrefabInstance: {fileID: 7695028843035008362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5480794474596935803 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2793791422795003153, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+  m_PrefabInstance: {fileID: 7695028843035008362}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6a56348457bc474988f648b43b776e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FistsOfHungerWeapon
+--- !u!212 &8396313463810251800 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2184115434473767282, guid: 6fbfa45a1e041014585ea2af902a9af7, type: 3}
+  m_PrefabInstance: {fileID: 7695028843035008362}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8097223893231133286
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1454898047739707863}
+    m_Modifications:
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.481
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5241561846424034868, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6440424846795783304, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+      propertyPath: m_Name
+      value: RollingPin
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+--- !u!4 &7657108817941311574 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1881552313714201136, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+  m_PrefabInstance: {fileID: 8097223893231133286}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7763231759325311347 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2009612713248248597, guid: 0a9b1cbf458e74c4bb95e1f7aad2fe46, type: 3}
+  m_PrefabInstance: {fileID: 8097223893231133286}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14de7bdf6f8857f44b2829e74dd2dcbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RollingPinWeapon
+--- !u!1001 &8367831257369914140
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1454898047739707863}
+    m_Modifications:
+    - target: {fileID: 2615823629615306159, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_Name
+      value: RotatingWhisk
+      objectReference: {fileID: 0}
+    - target: {fileID: 2615823629615306159, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+--- !u!4 &2885923685317944206 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6641787439611545746, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+  m_PrefabInstance: {fileID: 8367831257369914140}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3007531485038992559 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6745380428497876915, guid: 4079547551cbcb544970600efbd91f46, type: 3}
+  m_PrefabInstance: {fileID: 8367831257369914140}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a0dcb3de4d3a74fa69c373a9e10257, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingWhiskWeapon

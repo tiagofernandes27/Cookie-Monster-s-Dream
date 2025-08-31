@@ -18,7 +18,6 @@ public class PlayerAnimator : MonoBehaviour
         trailRenderer = GetComponent<TrailRenderer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-        animator.SetBool(IS_RUNNING, Player.Instance.IsRunning());
     }
 
     private void Update()

@@ -29,7 +29,7 @@ public class SpitProjectile : Projectile
     {
         //Debug.Log($"Straight projectile hit {collision.name}");
         // TODO: Apply weapon damage here
-        collision.GetComponent<Enemy>().TakeDamage(damage);
+        collision.GetComponent<Enemy>()?.TakeDamage(damage);
         Destroy(gameObject);
     }
 
