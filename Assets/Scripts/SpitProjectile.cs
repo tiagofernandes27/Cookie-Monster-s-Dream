@@ -16,16 +16,20 @@ public class SpitProjectile : Projectile
         }
     }
 
-    public override void Launch(Vector2 direction, float speed)
+    public override void Launch(Vector2 direction, float speed, float damageAmount)
     {
         launchDirection = direction.normalized;
         launchSpeed = speed;
+        damage = damageAmount;
+
+        FlipVisual(direction);
     }
 
     protected override void OnHit(Collider2D collision)
     {
-        Debug.Log($"Straight projectile hit {collision.name}");
+        //Debug.Log($"Straight projectile hit {collision.name}");
         // TODO: Apply weapon damage here
+        collision.GetComponent<Enemy>().TakeDamage(damage);
         Destroy(gameObject);
     }
 

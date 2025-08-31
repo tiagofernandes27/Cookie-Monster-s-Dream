@@ -12,17 +12,6 @@ public class FistsOfHungerWeapon : Weapon
     [SerializeField] private LayerMask enemyLayer;
 
 
-    protected override void Update()
-    {
-        base.Update();
-
-        // Test attack with left mouse button
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            Attack();
-        }
-    }
-
     protected override void PerformAttack()
     {
         Vector2 playerPos = Player.Instance.transform.position;
@@ -50,7 +39,7 @@ public class FistsOfHungerWeapon : Weapon
         foreach (Collider2D hit in hits)
         {
             // TODO: enemy damage logic
-            Debug.Log($"Hit enemy: {hit.name}");
+            hit.GetComponent<Enemy>().TakeDamage(damage);
         }
     }
 

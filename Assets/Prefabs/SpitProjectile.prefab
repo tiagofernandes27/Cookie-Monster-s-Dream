@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpitProjectile
   lifeTime: 5
+  visualSprite: {fileID: 5246250734058237878}
   hitLayers:
     serializedVersion: 2
     m_Bits: 119
