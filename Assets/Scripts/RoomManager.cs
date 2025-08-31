@@ -189,7 +189,7 @@ public class RoomManager : MonoBehaviour
     {
         if (currentRoom == null)
         {
-            Debug.LogWarning("No current room to open doors in!");
+            //Debug.LogWarning("No current room to open doors in!");
             return;
         }
         else { 

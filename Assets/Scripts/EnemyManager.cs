@@ -30,7 +30,7 @@ public class EnemyManager : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (currWave >= waveLimit && spawnedEnemies.Count == 0)
+        if (currWave >= waveLimit && enemiesToSpawn.Count == 0 && spawnedEnemies.Count == 0)
             RoomManager.Instance.OpenRoomDoors();
 
         if (currWave > 0 && currWave <= waveLimit) {

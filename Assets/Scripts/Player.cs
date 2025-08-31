@@ -139,8 +139,8 @@ public class Player : MonoBehaviour
 
     public int PlayerMoney
     {
-        get { return playerMoney; }   // like a "get function"
-        set { }
+        get => playerMoney;
+        set => playerMoney = value;
     }
 
 
