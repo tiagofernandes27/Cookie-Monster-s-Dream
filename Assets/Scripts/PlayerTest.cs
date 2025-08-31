@@ -7,10 +7,12 @@ public class PlayerTest : MonoBehaviour
     private Rigidbody2D playerRigidbody2D;
     private Vector2 moveDirection;
     public static PlayerTest Instance;
+    public int playerMoney;
 
 
     private void Awake()
     {
+        playerMoney = 0;
         Instance = this;
         playerRigidbody2D = GetComponent<Rigidbody2D>();
     }

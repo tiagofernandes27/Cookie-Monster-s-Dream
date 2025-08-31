@@ -94,6 +94,7 @@ public class RoomManager : MonoBehaviour
         // reset risk meter and rooms completed counter (game resets)
         riskMeter = 0;
         roomsCounter = 0;
+        UpdateRiskMeterUI();
 
         if (currentRoom != null) Destroy(currentRoom);
 
@@ -164,6 +165,11 @@ public class RoomManager : MonoBehaviour
         roomsCounter++;
         Debug.Log("Rooms Counter: "+roomsCounter);
         Debug.Log($"Risk Meter: {riskMeter}%");
+
+        if (roomsCounter > 1) { // player passed a room
+            PlayerTest.Instance.playerMoney += 5;
+            Debug.Log("Player Money " + PlayerTest.Instance.playerMoney);
+        }
     }
 
     private void UpdateRiskMeterUI()
