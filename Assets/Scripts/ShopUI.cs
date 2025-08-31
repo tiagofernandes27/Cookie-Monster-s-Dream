@@ -11,6 +11,7 @@ public class AbilityEntry
     public int cost;
     public string abilityName;
     public Animator lockAnimator;
+    public GameObject shadow;
 }
 
 public class ShopUI : MonoBehaviour
@@ -57,6 +58,21 @@ public class ShopUI : MonoBehaviour
             
         else
             Debug.Log("Player does not have enough money");
+    }
+
+    public void HideLock(GameObject lockpref)
+    {
+        for (int i = 0; i < abilities.Count; i++)
+        {
+            if (lockpref != null && abilities[i].lockAnimator != null)
+            {
+                if (abilities[i].lockAnimator.gameObject == lockpref)
+                {
+                    abilities[i].lockAnimator.gameObject.SetActive(false);
+                    abilities[i].shadow.SetActive(false);
+                }
+            }
+        }
     }
 
     
